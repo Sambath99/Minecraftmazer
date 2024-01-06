@@ -2,8 +2,8 @@ import { Box, Button, Container, Heading, Text, VStack, HStack, useClipboard, us
 import { FaCopy, FaDesktop, FaGamepad } from "react-icons/fa";
 
 const Index = () => {
-  const javaServerIP = "java.mazerclub.com";
-  const bedrockServerIP = "bedrock.mazerclub.com";
+  const javaServerIP = "mazerclub.com";
+  const bedrockServerIP = "mazerclub.com";
   const { hasCopied: hasCopiedJava, onCopy: onCopyJava } = useClipboard(javaServerIP);
   const { hasCopied: hasCopiedBedrock, onCopy: onCopyBedrock } = useClipboard(bedrockServerIP);
   const toast = useToast();
@@ -20,7 +20,7 @@ const Index = () => {
   };
 
   return (
-    <Container maxW="container.md" p={4}>
+    <Container maxW="container.md" p={4} bg="gray.100">
       <VStack spacing={5} align="stretch">
         <Box bgGradient="linear(to-r, teal.300, green.400)" borderRadius="lg" p={4} color="white">
           <Heading mb={2} as="h1" size="xl">
@@ -36,7 +36,7 @@ const Index = () => {
                 <Heading size="md">Java Edition</Heading>
                 <Text>{javaServerIP}</Text>
               </VStack>
-              <Button leftIcon={<FaCopy />} colorScheme="blue" variant="solid" onClick={() => handleCopy(javaServerIP, "Java")}>
+              <Button leftIcon={<FaCopy />} colorScheme="blue" variant="solid" _hover={{ bg: "blue.600", color: "white" }} onClick={() => handleCopy(javaServerIP, "Java")}>
                 {hasCopiedJava ? "Copied" : "Copy IP"}
               </Button>
             </HStack>
@@ -47,17 +47,17 @@ const Index = () => {
                 <Heading size="md">Bedrock Edition</Heading>
                 <Text>{bedrockServerIP}</Text>
               </VStack>
-              <Button leftIcon={<FaCopy />} colorScheme="purple" variant="solid" onClick={() => handleCopy(bedrockServerIP, "Bedrock")}>
+              <Button leftIcon={<FaCopy />} colorScheme="purple" variant="solid" _hover={{ bg: "purple.600", color: "white" }} onClick={() => handleCopy(bedrockServerIP, "Bedrock")}>
                 {hasCopiedBedrock ? "Copied" : "Copy IP"}
               </Button>
             </HStack>
           </Box>
         </VStack>
         <HStack justifyContent="center" spacing={4}>
-          <Button leftIcon={<FaDesktop />} colorScheme="teal" variant="outline">
+          <Button leftIcon={<FaDesktop />} colorScheme="teal" variant="outline" _hover={{ bg: "teal.600", color: "white" }}>
             Play on Java
           </Button>
-          <Button leftIcon={<FaGamepad />} colorScheme="purple" variant="outline">
+          <Button leftIcon={<FaGamepad />} colorScheme="purple" variant="outline" _hover={{ bg: "purple.600", color: "white" }}>
             Play on Bedrock
           </Button>
         </HStack>
