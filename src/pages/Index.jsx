@@ -22,10 +22,10 @@ const Index = () => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+    <motion.div initial={{ x: "-100vw" }} animate={{ x: 0 }} exit={{ x: "100vw" }} transition={{ type: "spring", stiffness: 120 }}>
       <Container maxW="container.md" p={4} bgGradient="linear(to-br, pink.100, blue.100)">
         <VStack spacing={5} align="stretch">
-          <Box bgGradient="linear(to-r, teal.300, green.400)" borderRadius="lg" p={4} color="white">
+          <Box bgGradient="linear(to-r, teal.300, yellow.400)" borderRadius="lg" p={6} shadow="2xl" color="white">
             <Heading mb={2} as="h1" size="xl">
               MazerClub Minecraft Server
             </Heading>
@@ -33,7 +33,7 @@ const Index = () => {
           </Box>
           <Image borderRadius="lg" src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxtaW5lY3JhZnQlMjBzZXJ2ZXJ8ZW58MHx8fHwxNzA0NTU4MTY0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Minecraft Server" />
           <VStack spacing={4}>
-            <Box p={5} shadow="xl" borderWidth="2px" borderRadius="lg" bg="blue.50" borderColor="blue.200">
+            <Box p={5} shadow="2xl" borderWidth="2px" borderRadius="lg" bgGradient="linear(to-r, blue.50, blue.100)" borderColor="blue.200">
               <HStack justifyContent="space-between">
                 <VStack align="start">
                   <Heading size="md">Java Edition</Heading>
@@ -44,7 +44,7 @@ const Index = () => {
                 </Button>
               </HStack>
             </Box>
-            <Box p={5} shadow="xl" borderWidth="2px" borderRadius="lg" bg="purple.50" borderColor="purple.200">
+            <Box p={5} shadow="2xl" borderWidth="2px" borderRadius="lg" bgGradient="linear(to-r, purple.50, purple.100)" borderColor="purple.200">
               <HStack justifyContent="space-between">
                 <VStack align="start">
                   <Heading size="md">Bedrock Edition</Heading>
